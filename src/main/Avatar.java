@@ -1,7 +1,5 @@
 package main;
 
-import java.util.Random;
-
 public class Avatar {
     
     private String nev;
@@ -9,13 +7,19 @@ public class Avatar {
     private String fegyver;
     private int magassag;
     private int eletEro;
+    private int sebzes;
 
-    public Avatar(String nev, String torzs, String fegyver, int magassag, int eletEro) {
+    public Avatar(String nev, String torzs, String fegyver, int magassag, int eletEro, int sebzes) {
         this.nev = nev;
         this.torzs = torzs;
         this.fegyver = fegyver;
         this.magassag = magassag;
         this.eletEro = eletEro;
+        this.sebzes = sebzes;
+    }
+    
+    public String getNev() {
+        return nev;
     }
 
     public String getTorzs() {
@@ -33,9 +37,13 @@ public class Avatar {
     public int getEletEro() {
         return eletEro;
     }
+    
+    public int getSebzes() {
+        return sebzes;
+    }
 
     public void setEletEro(int eletEro) {
-        this.eletEro = eletEro >= 0 ? eletEro : 10;
+        this.eletEro = eletEro >= 0 ? eletEro : 100;
     }
 
     public void setMagassag(int magassag) {
@@ -43,8 +51,16 @@ public class Avatar {
     }
 
     public String allapot() {
-        String allapot = "Az Avatarod: " + nev + "\nT�rzse: " + torzs + "\nFegyvere: " + fegyver + "\nMagass�ga: " + magassag + "cm";
+        String allapot = "Avatar: " + nev + "\n\tTörzse: " + torzs + "\n\tFegyvere: " + fegyver + "\n\tMagassága: " + magassag + "cm"+ "\n\tÉleterő: "+ eletEro +"\n";
         return allapot;
+    }
+    
+     public boolean egyforma(Avatar masik) {
+        return this.nev == masik.nev;
+    }
+    
+    public int harc(Avatar masik){
+        return (masik.eletEro - this.sebzes); 
     }
 
 }//class

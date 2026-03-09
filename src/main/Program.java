@@ -6,7 +6,7 @@ public class Program {
         Avatar a1 = new Avatar("Jake","Erdei","Íj",290,100,20);
         Avatar a2 = new Avatar("Quaritch","Hybrid","Ököl",290,100,20);
         
-        //tesztek
+        //Tesztek
         System.out.println(a1.allapot());
         System.out.println(a2.allapot());
         
